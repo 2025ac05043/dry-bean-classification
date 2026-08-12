@@ -3,8 +3,8 @@
 Multi-class classification of seven dry bean varieties from computer-vision measurements,
 with six supervised models and an interactive Streamlit front-end.
 
-**🔗 GitHub Repository:** https://github.com/YOUR-GITHUB-USERNAME/dry-bean-classification
-**🚀 Live Streamlit App:** https://YOUR-APP-NAME.streamlit.app
+**🔗 GitHub Repository:** https://github.com/2025ac05043/dry-bean-classification
+**🚀 Live Streamlit App:** https://dry-bean-classification-dfvwawmh4b2dsij2tv9iwy.streamlit.app
 
 ---
 
@@ -85,7 +85,7 @@ training fold only**, inside the pipeline, so no test information leaks into tra
 
 ## c. GitHub Repository Link
 
-https://github.com/YOUR-GITHUB-USERNAME/dry-bean-classification
+https://github.com/2025ac05043/dry-bean-classification
 
 ```
 dry-bean-classification/
@@ -179,7 +179,7 @@ reminder that a rare class is not automatically a hard class.
 
 ## Streamlit app features
 
-**🚀 Live app:** https://YOUR-APP-NAME.streamlit.app
+**🚀 Live app:** https://dry-bean-classification-dfvwawmh4b2dsij2tv9iwy.streamlit.app
 
 | Requirement | Implementation |
 |---|---|
@@ -199,7 +199,7 @@ Additional features beyond the minimum:
 ## How to run locally
 
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/dry-bean-classification.git
+git clone https://github.com/2025ac05043/dry-bean-classification.git
 cd dry-bean-classification
 pip install -r requirements.txt
 
