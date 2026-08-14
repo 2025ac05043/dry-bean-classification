@@ -144,16 +144,19 @@ uploaded = st.sidebar.file_uploader("Upload CSV", type=["csv"])
 
 bundled = load_bundled_test_data()
 use_bundled = st.sidebar.checkbox(
-    "Use bundled test_data.csv (2,723 held-out rows)",
-    value=uploaded is None,
-    disabled=bundled is None,
+    "Preload bundled test_data.csv (2,723 held-out rows)",
+    value=True,
+    disabled=bundled is None or uploaded is not None,
+    help="Only used when no file is uploaded. An uploaded CSV always takes priority.",
 )
 
+# An uploaded file always wins, so the uploader works whatever the checkbox says.
 data, source = None, None
-if uploaded is not None and not use_bundled:
+if uploaded is not None:
     try:
         data = pd.read_csv(uploaded)
         source = f"uploaded file - {uploaded.name}"
+        st.sidebar.success(f"Using your upload: {uploaded.name}")
     except Exception as exc:  # noqa: BLE001
         st.sidebar.error(f"Could not read that CSV: {exc}")
 elif use_bundled and bundled is not None:
@@ -161,7 +164,7 @@ elif use_bundled and bundled is not None:
     source = "bundled test_data.csv"
 
 if data is None:
-    st.info("⬅️ Upload a CSV in the sidebar, or tick *Use bundled test_data.csv* to get started.")
+    st.info("⬅️ Upload a CSV in the sidebar, or tick *Preload bundled test_data.csv* to get started.")
     st.stop()
 
 missing_cols = [c for c in FEATURES if c not in data.columns]
